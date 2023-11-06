@@ -1,0 +1,76 @@
+benztimm@perlmutter:login26:/pscratch/sd/b/benztimm/csc746hw5/build> ncu --set default --section SourceCounters --metrics smsp__cycles_active.avg.pct_of_peak_sustained_elapsed,dram__throughput.avg.pct_of_peak_sustained_elapsed,gpu__time_duration.avg sobel_cpu_omp_offload
+ Read data from the file ../data/zebra-gray-int8-4x 
+==PROF== Connected to process 394519 (/pscratch/sd/b/benztimm/csc746hw5/build/sobel_cpu_omp_offload)
+==PROF== Profiling "nvkernel__Z18do_sobel_filteri..." - 1: 0%....50%....100% - 13 passes
+ Elapsed time is : 3.675 
+ Wrote the output file ../data/processed-raw-int8-4x-cpu.dat 
+==PROF== Disconnected from process 394519
+[394519] sobel_cpu_omp_offload@127.0.0.1
+  nvkernel__Z18do_sobel_filteringPfS_ii_F1L105_2, 2023-Nov-05 23:51:21, Context 1, Stream 13
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    dram__throughput.avg.pct_of_peak_sustained_elapsed                                   %                          17.17
+    gpu__time_duration.avg                                                         msecond                           1.05
+    smsp__cycles_active.avg.pct_of_peak_sustained_elapsed                                %                          99.63
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+    Section: GPU Speed Of Light Throughput
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    DRAM Frequency                                                           cycle/nsecond                           1.21
+    SM Frequency                                                             cycle/usecond                         763.39
+    Elapsed Cycles                                                                   cycle                        803,948
+    Memory [%]                                                                           %                          40.30
+    DRAM Throughput                                                                      %                          17.17
+    Duration                                                                       msecond                           1.05
+    L1/TEX Cache Throughput                                                              %                          40.44
+    L2 Cache Throughput                                                                  %                          31.17
+    SM Active Cycles                                                                 cycle                     801,110.18
+    Compute (SM) [%]                                                                     %                          74.76
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    WRN   Compute is more heavily utilized than Memory: Look at the Compute Workload Analysis section to see what the   
+          compute pipelines are spending their time doing. Also, consider whether any computation is redundant and
+          could be reduced or moved to look-up tables.
+
+    Section: Launch Statistics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Block Size                                                                                                        128
+    Function Cache Configuration                                                                  cudaFuncCachePreferNone
+    Grid Size                                                                                                     285,925
+    Registers Per Thread                                                   register/thread                             48
+    Shared Memory Configuration Size                                                 Kbyte                          32.77
+    Driver Shared Memory Per Block                                             Kbyte/block                           1.02
+    Dynamic Shared Memory Per Block                                             byte/block                              0
+    Static Shared Memory Per Block                                              byte/block                              0
+    Threads                                                                         thread                     36,598,400
+    Waves Per SM                                                                                                   264.75
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+    Section: Occupancy
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Block Limit SM                                                                   block                             32
+    Block Limit Registers                                                            block                             10
+    Block Limit Shared Mem                                                           block                             32
+    Block Limit Warps                                                                block                             16
+    Theoretical Active Warps per SM                                                   warp                             40
+    Theoretical Occupancy                                                                %                          62.50
+    Achieved Occupancy                                                                   %                          56.25
+    Achieved Active Warps Per SM                                                      warp                          36.00
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    WRN   This kernel's theoretical occupancy (62.5%) is limited by the number of required registers See the CUDA Best
+          Practices Guide (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more
+          details on optimizing occupancy.
+
+    Section: Source Counters
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Branch Instructions Ratio                                                            %                           0.05
+    Branch Instructions                                                               inst                     13,732,348
+    Branch Efficiency                                                                    %                          99.98
+    Avg. Divergent Branches                                                                                          3.07
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    WRN   This kernel has uncoalesced global accesses resulting in a total of 6853584 excessive sectors (9% of the
+          total 73180108 sectors). Check the L2 Theoretical Sectors Global Excessive table for the primary source
+          locations. The CUDA Programming Guide
+          (https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#device-memory-accesses) had additional
+          information on reducing uncoalesced device memory accesses.
+
+benztimm@perlmutter:login26:/pscratch/sd/b/benztimm/csc746hw5/build> 
