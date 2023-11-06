@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /global/homes/b/benztimm/csc746hw5/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -84,6 +74,16 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -115,6 +115,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named sobel_gpu
+
+# Build rule for target.
+sobel_gpu: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sobel_gpu
+.PHONY : sobel_gpu
+
+# fast build rule for target.
+sobel_gpu/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_gpu.dir/build.make CMakeFiles/sobel_gpu.dir/build
+.PHONY : sobel_gpu/fast
 
 #=============================================================================
 # Target rules for targets named sobel_cpu
@@ -153,6 +166,30 @@ sobel_cpu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_cpu.dir/build.make CMakeFiles/sobel_cpu.dir/sobel_cpu.cpp.s
 .PHONY : sobel_cpu.cpp.s
 
+sobel_gpu.o: sobel_gpu.cu.o
+.PHONY : sobel_gpu.o
+
+# target to build an object file
+sobel_gpu.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_gpu.dir/build.make CMakeFiles/sobel_gpu.dir/sobel_gpu.cu.o
+.PHONY : sobel_gpu.cu.o
+
+sobel_gpu.i: sobel_gpu.cu.i
+.PHONY : sobel_gpu.i
+
+# target to preprocess a source file
+sobel_gpu.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_gpu.dir/build.make CMakeFiles/sobel_gpu.dir/sobel_gpu.cu.i
+.PHONY : sobel_gpu.cu.i
+
+sobel_gpu.s: sobel_gpu.cu.s
+.PHONY : sobel_gpu.s
+
+# target to generate assembly for a file
+sobel_gpu.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_gpu.dir/build.make CMakeFiles/sobel_gpu.dir/sobel_gpu.cu.s
+.PHONY : sobel_gpu.cu.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +199,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sobel_cpu"
+	@echo "... sobel_gpu"
 	@echo "... sobel_cpu.o"
 	@echo "... sobel_cpu.i"
 	@echo "... sobel_cpu.s"
+	@echo "... sobel_gpu.o"
+	@echo "... sobel_gpu.i"
+	@echo "... sobel_gpu.s"
 .PHONY : help
 
 
