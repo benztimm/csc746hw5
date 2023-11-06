@@ -1,0 +1,34 @@
+
+benztimm@nid006711:~/csc746hw5/build> export OMP_NUM_THREADS=1
+benztimm@nid006711:~/csc746hw5/build> srun sobel_cpu 
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.315116 
+ Wrote the output file ../data/processed-raw-int8-4x-cpu.dat 
+
+
+benztimm@nid006711:~/csc746hw5/build> export OMP_NUM_THREADS=2
+benztimm@nid006711:~/csc746hw5/build> srun sobel_cpu 
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.158976 
+ Wrote the output file ../data/processed-raw-int8-4x-cpu.dat 
+
+
+benztimm@nid006711:~/csc746hw5/build> export OMP_NUM_THREADS=4
+benztimm@nid006711:~/csc746hw5/build> srun sobel_cpu 
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.0805152 
+ Wrote the output file ../data/processed-raw-int8-4x-cpu.dat 
+
+
+benztimm@nid006711:~/csc746hw5/build> export OMP_NUM_THREADS=8
+benztimm@nid006711:~/csc746hw5/build> srun sobel_cpu
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.0413807 
+ Wrote the output file ../data/processed-raw-int8-4x-cpu.dat 
+
+
+benztimm@nid006711:~/csc746hw5/build> export OMP_NUM_THREADS=16
+benztimm@nid006711:~/csc746hw5/build> srun sobel_cpu
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.0232184 
+ Wrote the output file ../data/processed-raw-int8-4x-cpu.dat 
