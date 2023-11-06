@@ -16,6 +16,6 @@ target_link_options(sobel_cpu PRIVATE -fopenmp)
 #target_compile_options(sobel_cpu_omp_offload PRIVATE -fast -mp=gpu -Minfo=mp,accel )
 #target_link_options(sobel_cpu_omp_offload PRIVATE -fast -mp=gpu -Minfo=mp,accel)
 
-#add_executable(sobel_gpu sobel_gpu.cu)
+add_executable(sobel_gpu sobel_gpu.cu)
 # generate CUDA code for an actual compute capability 7.0 device (Volta)
 # set_property(TARGET sobel_gpu PROPERTY CUDA_ARCHITECTURES 70-real) 
