@@ -63,7 +63,8 @@ sobel_filtered_pixel(float *s, int i, int j, int ncols, int nrows, float *gx, fl
 {
 
    float t = 0.0;
-
+   float Gx = 0.0f;
+   float Gy = 0.0f;
    // ADD CODE HERE:  add your code here for computing the sobel stencil computation at location (i,j)
    // of input s, returning a float
    // Iterate over the 3x3 kernel
@@ -188,9 +189,9 @@ int main(int ac, char *av[])
    int nBlocks = 1, nThreadsPerBlock = 256;
 
    // ADD CODE HERE: insert your code here to set a different number of thread blocks or # of threads per block
-   if (argc >= 3) {
-        nBlocks = atoi(argv[1]);
-        nThreadsPerBlock = atoi(argv[2]);
+   if (ac >= 3) {
+        nBlocks = atoi(av[1]);
+        nThreadsPerBlock = atoi(av[2]);
     }
    printf(" GPU configuration: %d blocks, %d threads per block \n", nBlocks, nThreadsPerBlock);
 
