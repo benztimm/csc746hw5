@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /global/homes/b/benztimm/csc746hw5/build
 
 # The main recursive "all" target.
 all: CMakeFiles/sobel_gpu.dir/all
+all: CMakeFiles/sobel_cpu_omp_offload.dir/all
 all: CMakeFiles/sobel_cpu.dir/all
 .PHONY : all
 
@@ -73,6 +74,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/sobel_gpu.dir/clean
+clean: CMakeFiles/sobel_cpu_omp_offload.dir/clean
 clean: CMakeFiles/sobel_cpu.dir/clean
 .PHONY : clean
 
@@ -83,7 +85,7 @@ clean: CMakeFiles/sobel_cpu.dir/clean
 CMakeFiles/sobel_gpu.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_gpu.dir/build.make CMakeFiles/sobel_gpu.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_gpu.dir/build.make CMakeFiles/sobel_gpu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/global/homes/b/benztimm/csc746hw5/build/CMakeFiles --progress-num=3,4 "Built target sobel_gpu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/global/homes/b/benztimm/csc746hw5/build/CMakeFiles --progress-num=5,6 "Built target sobel_gpu"
 .PHONY : CMakeFiles/sobel_gpu.dir/all
 
 # Build rule for subdir invocation for target.
@@ -101,6 +103,32 @@ sobel_gpu: CMakeFiles/sobel_gpu.dir/rule
 CMakeFiles/sobel_gpu.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_gpu.dir/build.make CMakeFiles/sobel_gpu.dir/clean
 .PHONY : CMakeFiles/sobel_gpu.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sobel_cpu_omp_offload.dir
+
+# All Build rule for target.
+CMakeFiles/sobel_cpu_omp_offload.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_cpu_omp_offload.dir/build.make CMakeFiles/sobel_cpu_omp_offload.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_cpu_omp_offload.dir/build.make CMakeFiles/sobel_cpu_omp_offload.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/global/homes/b/benztimm/csc746hw5/build/CMakeFiles --progress-num=3,4 "Built target sobel_cpu_omp_offload"
+.PHONY : CMakeFiles/sobel_cpu_omp_offload.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sobel_cpu_omp_offload.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /global/homes/b/benztimm/csc746hw5/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sobel_cpu_omp_offload.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /global/homes/b/benztimm/csc746hw5/build/CMakeFiles 0
+.PHONY : CMakeFiles/sobel_cpu_omp_offload.dir/rule
+
+# Convenience name for target.
+sobel_cpu_omp_offload: CMakeFiles/sobel_cpu_omp_offload.dir/rule
+.PHONY : sobel_cpu_omp_offload
+
+# clean rule for target.
+CMakeFiles/sobel_cpu_omp_offload.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_cpu_omp_offload.dir/build.make CMakeFiles/sobel_cpu_omp_offload.dir/clean
+.PHONY : CMakeFiles/sobel_cpu_omp_offload.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/sobel_cpu.dir

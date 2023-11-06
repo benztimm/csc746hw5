@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/global/homes/b/benztimm/csc746hw5/sobel_cpu_omp_offload.cpp
+iostream
+-
+vector
+-
+chrono
+-
+unistd.h
+-
+string.h
+-
+math.h
+-
+omp.h
+-
+

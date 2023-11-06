@@ -48,5 +48,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/sobel_gpu.dir/DependInfo.cmake"
+  "CMakeFiles/sobel_cpu_omp_offload.dir/DependInfo.cmake"
   "CMakeFiles/sobel_cpu.dir/DependInfo.cmake"
   )

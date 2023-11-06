@@ -130,6 +130,19 @@ sobel_gpu/fast:
 .PHONY : sobel_gpu/fast
 
 #=============================================================================
+# Target rules for targets named sobel_cpu_omp_offload
+
+# Build rule for target.
+sobel_cpu_omp_offload: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sobel_cpu_omp_offload
+.PHONY : sobel_cpu_omp_offload
+
+# fast build rule for target.
+sobel_cpu_omp_offload/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_cpu_omp_offload.dir/build.make CMakeFiles/sobel_cpu_omp_offload.dir/build
+.PHONY : sobel_cpu_omp_offload/fast
+
+#=============================================================================
 # Target rules for targets named sobel_cpu
 
 # Build rule for target.
@@ -166,6 +179,30 @@ sobel_cpu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_cpu.dir/build.make CMakeFiles/sobel_cpu.dir/sobel_cpu.cpp.s
 .PHONY : sobel_cpu.cpp.s
 
+sobel_cpu_omp_offload.o: sobel_cpu_omp_offload.cpp.o
+.PHONY : sobel_cpu_omp_offload.o
+
+# target to build an object file
+sobel_cpu_omp_offload.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_cpu_omp_offload.dir/build.make CMakeFiles/sobel_cpu_omp_offload.dir/sobel_cpu_omp_offload.cpp.o
+.PHONY : sobel_cpu_omp_offload.cpp.o
+
+sobel_cpu_omp_offload.i: sobel_cpu_omp_offload.cpp.i
+.PHONY : sobel_cpu_omp_offload.i
+
+# target to preprocess a source file
+sobel_cpu_omp_offload.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_cpu_omp_offload.dir/build.make CMakeFiles/sobel_cpu_omp_offload.dir/sobel_cpu_omp_offload.cpp.i
+.PHONY : sobel_cpu_omp_offload.cpp.i
+
+sobel_cpu_omp_offload.s: sobel_cpu_omp_offload.cpp.s
+.PHONY : sobel_cpu_omp_offload.s
+
+# target to generate assembly for a file
+sobel_cpu_omp_offload.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sobel_cpu_omp_offload.dir/build.make CMakeFiles/sobel_cpu_omp_offload.dir/sobel_cpu_omp_offload.cpp.s
+.PHONY : sobel_cpu_omp_offload.cpp.s
+
 sobel_gpu.o: sobel_gpu.cu.o
 .PHONY : sobel_gpu.o
 
@@ -199,10 +236,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sobel_cpu"
+	@echo "... sobel_cpu_omp_offload"
 	@echo "... sobel_gpu"
 	@echo "... sobel_cpu.o"
 	@echo "... sobel_cpu.i"
 	@echo "... sobel_cpu.s"
+	@echo "... sobel_cpu_omp_offload.o"
+	@echo "... sobel_cpu_omp_offload.i"
+	@echo "... sobel_cpu_omp_offload.s"
 	@echo "... sobel_gpu.o"
 	@echo "... sobel_gpu.i"
 	@echo "... sobel_gpu.s"
