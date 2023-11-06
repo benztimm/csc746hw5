@@ -28,6 +28,6 @@ do
         # Run the application with ncu for profiling
         ncu --set default --section SourceCounters \
             --metrics smsp__cycles_active.avg.pct_of_peak_sustained_elapsed,dram__throughput.avg.pct_of_peak_sustained_elapsed,gpu__time_duration.avg \
-            ./a.out $tpb $ntb
+            sobel_gpu $tpb $ntb
     done
 done
