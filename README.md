@@ -9,6 +9,10 @@ filter. The three implementations are:
 
 # Build instructions - general
 
+Login to GPU node by
+
+    salloc -C gpu -t 30 -c 10 -G 1 -q interactive -A m3930
+
 This assignment requires use of the Nvidia compilers as follows:
 
     module load PrgEnv-nvidia
@@ -25,6 +29,9 @@ Then, once your environment is set up, then:
 It is OK to do builds on the login node once you have set up the environment above.  
 All code should be executed on a GPU node.
 
+# How to run code
+
+After build your code, in build folder, it should be
 # Comments about all the codes
 
 In all three cases -- CPU only, GPU, and OpenMP device offload -- the programs will all read raw bytes

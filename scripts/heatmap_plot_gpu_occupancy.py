@@ -23,16 +23,16 @@ import matplotlib.pyplot as plt
 threads_per_block = ['32', '64', '128', '256', '512', '1024'] # y axis, 6 of them
 thread_blocks = ["1", "4", "16", "64", "256", "1024", "4096"] # x axis, 7 of them
 
-runtime = np.array([[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0],
-                    [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0],
-                    [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0],
-                    [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0],
-                    [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0],
-                    [1.3, 1.2, 0.0, 0.0, 0.0, 3.2, 5.1]])
+runtime = np.array([[1.56, 1.56, 1.56, 1.56, 3.70, 14.75, 32.97],
+                    [3.12, 3.12, 3.12, 3.12, 7.40, 28.95, 71.60],
+                    [6.25, 6.25, 6.25, 6.25, 14.77, 54.17, 85.52],
+                    [12.5, 12.5, 12.5, 12.49, 29.14, 72.55, 91.56],
+                    [24.99, 24.98, 24.76, 24.73, 55.37, 85.55, 92.78],
+                    [49.93, 48.97, 48.83, 48.60, 83.94, 91.19, 91.43]])
 
 
-fig, ax = plt.subplots()
-im = ax.imshow(runtime, cmap="coolwarm")
+fig, ax = plt.subplots(figsize=(9,6))
+im = ax.imshow(runtime, cmap="coolwarm_r")
 
 # We want to show all ticks...
 ax.set_xticks(np.arange(len(thread_blocks)))
@@ -51,11 +51,13 @@ for i in range(len(threads_per_block)): # y axis
         text = ax.text(j, i, runtime[i, j],
                        ha="center", va="center", color="k")
 
-ax.set_title("Runtime on <what platform> at Varying Block Size and Number of Blocks")
+ax.set_title("Achieved Occupancy (%) on GPU-CUDA at Varying Block Size and Number of Blocks")
 ax.set_ylabel('Threads per block')
 ax.set_xlabel('Block Sizes')
 fig.colorbar(im, ax=ax)
 fig.tight_layout()
+fig.savefig("heatmap_gpu_occupancy.png")
 plt.show()
+
 
 # EOF
