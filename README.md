@@ -41,6 +41,11 @@ Simply run,
 
     srun sobel_cpu
 
+You can change the omp thread by
+
+    export OMP_NUM_THREADS=NUM_THREAD
+    export OMP_SCHEDULE=SCHEDULE_TYPE
+
 ## For sobel_gpu,
 
 You have two option
@@ -65,7 +70,7 @@ Second, utilize shell script *gpu-script.sh*
 simply run
 
     ncu --set default --section SourceCounters --metrics smsp__cycles_active.avg.pct_of_peak_sustained_elapsed,dram__throughput.avg.pct_of_peak_sustained_elapsed,gpu__time_duration.avg sobel_cpu_omp_offload
-    
+
 # Comments about all the codes
 
 In all three cases -- CPU only, GPU, and OpenMP device offload -- the programs will all read raw bytes
