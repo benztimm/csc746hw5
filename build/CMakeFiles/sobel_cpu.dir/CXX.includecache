@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/global/homes/b/benztimm/csc746hw5/sobel_cpu.cpp
+/pscratch/sd/b/benztimm/csc746hw5/sobel_cpu.cpp
 iostream
 -
 vector

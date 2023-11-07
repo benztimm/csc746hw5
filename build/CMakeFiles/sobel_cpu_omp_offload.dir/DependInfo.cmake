@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/global/homes/b/benztimm/csc746hw5/sobel_cpu_omp_offload.cpp" "/global/homes/b/benztimm/csc746hw5/build/CMakeFiles/sobel_cpu_omp_offload.dir/sobel_cpu_omp_offload.cpp.o"
+  "/pscratch/sd/b/benztimm/csc746hw5/sobel_cpu_omp_offload.cpp" "/pscratch/sd/b/benztimm/csc746hw5/build/CMakeFiles/sobel_cpu_omp_offload.dir/sobel_cpu_omp_offload.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "NVHPC")
 

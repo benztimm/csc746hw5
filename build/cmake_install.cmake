@@ -1,4 +1,4 @@
-# Install script for directory: /global/homes/b/benztimm/csc746hw5
+# Install script for directory: /pscratch/sd/b/benztimm/csc746hw5
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/global/homes/b/benztimm/csc746hw5/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/pscratch/sd/b/benztimm/csc746hw5/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

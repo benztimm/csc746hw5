@@ -1,4 +1,4 @@
-CMakeFiles/sobel_gpu.dir/sobel_gpu.cu.o : /global/homes/b/benztimm/csc746hw5/sobel_gpu.cu \
+CMakeFiles/sobel_gpu.dir/sobel_gpu.cu.o : /pscratch/sd/b/benztimm/csc746hw5/sobel_gpu.cu \
     /usr/include/stdc-predef.h \
     /opt/nvidia/hpc_sdk/Linux_x86_64/22.7/cuda/11.7/include/cuda_runtime.h \
     /opt/nvidia/hpc_sdk/Linux_x86_64/22.7/cuda/11.7/include/crt/host_config.h \
