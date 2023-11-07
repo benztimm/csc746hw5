@@ -19,6 +19,10 @@ This assignment requires use of the Nvidia compilers as follows:
     export CC=cc
     export CXX=CC 
 
+cd to the clone repository. If the build folder already exists, then run this command
+
+    rm -rf build
+
 Then, once your environment is set up, then:
 
     mkdir build  
@@ -31,7 +35,37 @@ All code should be executed on a GPU node.
 
 # How to run code
 
-After build your code, in build folder, it should be
+## For sobel_cpu, 
+
+Simply run,
+
+    srun sobel_cpu
+
+## For sobel_gpu,
+
+You have two option
+
+First, run following command
+
+    ncu --set default --section SourceCounters --metrics smsp__cycles_active.avg.pct_of_peak_sustained_elapsed,dram__throughput.avg.pct_of_peak_sustained_elapsed,gpu__time_duration.avg sobel_gpu <threads_per_block> <num_blocks>
+
+Second, utilize shell script *gpu-script.sh*
+
+    There is a script name "gpu-script.sh" in base folder, you can copy it to build folder to run all of combination of thread_per_block and num_block
+
+    Go to csc746hw5 folder and run this command
+
+        cp gpu-script.sh build/
+
+    then run
+
+        sh gpu-script.sh
+
+## For sobel_cpu_omp_offload
+simply run
+
+    ncu --set default --section SourceCounters --metrics smsp__cycles_active.avg.pct_of_peak_sustained_elapsed,dram__throughput.avg.pct_of_peak_sustained_elapsed,gpu__time_duration.avg sobel_cpu_omp_offload
+    
 # Comments about all the codes
 
 In all three cases -- CPU only, GPU, and OpenMP device offload -- the programs will all read raw bytes
