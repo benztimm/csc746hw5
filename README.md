@@ -13,6 +13,11 @@ Login to GPU node by
 
     salloc -C gpu -t 30 -c 10 -G 1 -q interactive -A m3930
 
+cd to scratch filesystem by
+    cd $SCRATCH
+
+After that, Clone this repository to scratch filesystem
+
 This assignment requires use of the Nvidia compilers as follows:
 
     module load PrgEnv-nvidia
