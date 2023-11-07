@@ -39,7 +39,7 @@ All code should be executed on a GPU node.
 
 Simply run,
 
-    srun sobel_cpu
+    ./sobel_cpu
 
 You can change the omp thread by
 
